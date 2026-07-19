@@ -71,7 +71,7 @@
       background-repeat: no-repeat;
       background-position: right center;
       background-size: min(56%, 700px) auto;
-      opacity: 0.82;
+      opacity: 0.90;
       filter: saturate(1.04) contrast(1.08) brightness(1.02) drop-shadow(0 24px 44px rgba(27, 38, 50, 0.18));
       mask-image: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.04) 26%, rgba(0, 0, 0, 0.78) 56%, black 94%);
     }
@@ -101,7 +101,7 @@
 
     .title-row {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       gap: 14px;
       min-width: 0;
@@ -121,7 +121,7 @@
       align-items: center;
       gap: 8px;
       color: var(--green);
-      font-size: clamp(0.78rem, 1.7vw, 0.95rem);
+      font-size: clamp(0.92rem, 1.9vw, 1.1rem);
       font-weight: 720;
       white-space: nowrap;
     }
@@ -174,7 +174,7 @@
 
     .updated-time {
       color: var(--muted);
-      font-size: clamp(0.68rem, 1.35vw, 0.86rem);
+      font-size: clamp(0.82rem, 1.55vw, 1rem);
       line-height: 1.2;
       font-weight: 680;
       white-space: nowrap;
@@ -202,8 +202,8 @@
 
     .label {
       margin: 0;
-      color: var(--muted);
-      font-size: clamp(0.88rem, 1.9vw, 1.25rem);
+      color: #000000;
+      font-size: clamp(1.22rem, 2.55vw, 1.65rem);
       line-height: 1.25;
       font-weight: 720;
       letter-spacing: 0;
@@ -227,7 +227,7 @@
     }
 
     .btc-total {
-      color: var(--orange);
+      color: #FF7223;
       font-size: var(--btc-size);
     }
 
@@ -330,14 +330,14 @@
 
     .price-chip-label {
       color: rgba(44, 56, 68, 0.78);
-      font-size: clamp(0.62rem, 1.3vw, 0.76rem);
+      font-size: clamp(0.76rem, 1.55vw, 0.9rem);
       font-weight: 760;
       line-height: 1;
       white-space: nowrap;
     }
 
     .price-chip-value {
-      color: var(--orange);
+      color: #FF7223;
       font-size: clamp(1rem, 2.7vw, 1.42rem);
       font-weight: 820;
       line-height: 1.05;
@@ -452,7 +452,7 @@
       .dashboard::before {
         background-position: center 58%;
         background-size: 116% auto;
-        opacity: 0.28;
+        opacity: 0.90;
         filter: saturate(1.02) contrast(1.08) brightness(1.02) drop-shadow(0 18px 34px rgba(27, 38, 50, 0.16));
         mask-image: radial-gradient(circle at 52% 58%, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.38) 42%, transparent 78%);
       }
@@ -492,12 +492,12 @@
 
     @media (max-width: 420px) {
       h1 { font-size: 0.96rem; }
-      .live-status { font-size: 0.74rem; }
-      .label { font-size: 0.86rem; }
-      .updated-time { font-size: 0.64rem; }
+      .live-status { font-size: 0.88rem; }
+      .label { font-size: 1.18rem; }
+      .updated-time { font-size: 0.78rem; }
       .sparkline-wrap { max-height: 74px; }
-      .price-chip { min-width: min(188px, 58vw); padding: 7px 9px; }
-      .dashboard::before { opacity: 0.24; }
+      .price-chip { min-width: min(218px, 68vw); padding: 8px 10px; }
+      .dashboard::before { opacity: 0.90; }
     }
 
     @media (max-height: 680px) {
@@ -512,11 +512,11 @@
         grid-template-rows: minmax(0, auto) minmax(0, auto) minmax(34px, 10dvh);
       }
 
-      .label { font-size: 0.78rem; }
+      .label { font-size: 1.06rem; }
       .sparkline-wrap { max-height: 58px; }
       .price-chip { transform: translateY(-18%); }
-      .updated-time { font-size: 0.62rem; }
-      .dashboard::before { opacity: 0.20; }
+      .updated-time { font-size: 0.74rem; }
+      .dashboard::before { opacity: 0.90; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -535,7 +535,6 @@
   <main>
     <section class="dashboard" aria-label="Bitcoin portfolio value">
       <div class="title-row">
-        <h1>Bitcoin Portfolio</h1>
         <div class="status-stack">
           <div class="live-status" id="connectionStatus" aria-live="polite"><span class="dot warn" aria-hidden="true"></span>Connecting</div>
           <div class="updated-time">อัปเดตล่าสุด: <strong id="lastUpdated">กำลังเชื่อมต่อ...</strong></div>
@@ -545,7 +544,7 @@
       <div class="numbers">
         <article class="metric">
           <p class="label">Bitcoin รวมทั้งหมด</p>
-          <p class="btc-total" id="totalBtc">0.19861733 BTC</p>
+          <p class="btc-total" id="totalBtc">0.23194502 BTC</p>
         </article>
 
         <article class="metric">
@@ -573,7 +572,7 @@
             <circle class="sparkline-dot" id="chartDot" cx="720" cy="42" r="5"></circle>
           </svg>
           <div class="price-chip" aria-live="polite">
-            <span class="price-chip-label">BTC/THB LIVE</span>
+            <span class="price-chip-label">&#3619;&#3634;&#3588;&#3634; Bitcoin/&#3610;&#3634;&#3607; &#3603; &#3611;&#3633;&#3592;&#3592;&#3640;&#3610;&#3633;&#3609;</span>
             <span class="price-chip-value" id="btcThbPrice">฿0.00</span>
           </div>
         </div>
@@ -592,8 +591,7 @@
 
   <script>
     const HOLDINGS = [
-      { exchange: "Binance", btc: 0.04101243 },
-      { exchange: "KuCoin", btc: 0.17688536 }
+      { exchange: "Total", btc: 0.23194502 }
     ];
 
     const state = {
